@@ -7,12 +7,14 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
+import { RacesComponent } from './components/races/races.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
-        HomeComponent
+        HomeComponent,
+        RacesComponent
     ],
     imports: [
         CommonModule,
@@ -20,8 +22,9 @@ import { HomeComponent } from './components/home/home.component';
         FormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'home', component: HomeComponent },
-            { path: '**', redirectTo: 'home' }
+            { path: 'home', component: HomeComponent },            
+            { path: 'races', component: RacesComponent },
+            //{ path: '**', redirectTo: 'home' }
         ])
     ]
 })

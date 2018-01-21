@@ -14,10 +14,10 @@ namespace RaceDay.Models
             Horses = horses;
         }
 
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public DateTime Start { get; set; }
-        public string Status { get; set; }
-        public IEnumerable<Horse> Horses { get; set; }
+        public int Id { get; }
+        public string Name { get; }
+        public DateTime Start { get; }
+        public string Status { get; }
+        public IEnumerable<Horse> Horses { get; }
     }
 }

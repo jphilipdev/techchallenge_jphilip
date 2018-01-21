@@ -5,18 +5,16 @@
 <table class='table' *ngIf="races">
     <thead>
         <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Total Placed</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let race of races">
-            <td>{{ forecast.dateFormatted }}</td>
-            <td>{{ forecast.temperatureC }}</td>
-            <td>{{ forecast.temperatureF }}</td>
-            <td>{{ forecast.summary }}</td>
+            <td>{{ race.race.name }}</td>
+            <td>{{ race.status }}</td>
+            <td>{{ race.totalPlaced }}</td>
         </tr>
     </tbody>
 </table>
