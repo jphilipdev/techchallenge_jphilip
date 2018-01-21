@@ -2,7 +2,7 @@
 
 <p *ngIf="!races"><em>Loading...</em></p>
 
-<table class='table' *ngIf="races">
+<table class="table" *ngIf="races">
     <thead>
         <tr>
             <th>Name</th>
@@ -10,11 +10,31 @@
             <th>Total Placed</th>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let race of races">
-            <td>{{ race.race.name }}</td>
-            <td>{{ race.status }}</td>
-            <td>{{ race.totalPlaced }}</td>
+    <tbody *ngFor="let race of races">
+        <tr>
+            <td class="col-md-4 col-lg-4">{{ race.race.name }}</td>
+            <td class="col-md-4 col-lg-4">{{ race.status }}</td>
+            <td class="col-md-4 col-lg-4">{{ race.totalPlaced }}</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Horse</th>
+                            <th>Bets</th>
+                            <th>Total Potential Payout</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let horse of race.horses">
+                            <td class="col-md-4 col-lg-4">{{ horse.horse.name }}</td>
+                            <td class="col-md-4 col-lg-4">{{ horse.numberOfBets }}</td>
+                            <td class="col-md-4 col-lg-4">{{ horse.totalPotentialPayout }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>            
         </tr>
     </tbody>
 </table>
