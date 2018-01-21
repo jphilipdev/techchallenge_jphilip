@@ -11,11 +11,11 @@ using System.Linq;
 namespace RaceDay.Tests
 {
     [TestClass]
-    public class RacesDomainServiceTests
+    public class RaceDomainServiceTests
     {
         private Mock<IRacesApiProxy> _racesApiProxy;
         private Mock<IBetsApiProxy> _betsApiProxy;
-        private RacesDomainService _subject;
+        private RaceDomainService _subject;
 
         #region Test Data
         private int _horseId1 = 101;
@@ -69,7 +69,7 @@ namespace RaceDay.Tests
             _racesApiProxy = new Mock<IRacesApiProxy>();
             _betsApiProxy = new Mock<IBetsApiProxy>();
 
-            _subject = new RacesDomainService(_racesApiProxy.Object, _betsApiProxy.Object);
+            _subject = new RaceDomainService(_racesApiProxy.Object, _betsApiProxy.Object);
         }
 
         [TestMethod]

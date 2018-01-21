@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace RaceDay.DomainServices
 {
-    public class CustomersDomainService : ICustomersDomainService
+    public class CustomerDomainService : ICustomerDomainService
     {
         private readonly ICustomersApiProxy _customersApiProxy;
         private readonly IBetsApiProxy _betsApiProxy;
         private readonly decimal _atRiskCustomerTotalAmountPlacedValue;
 
-        public CustomersDomainService(ICustomersApiProxy customersApiProxy, IBetsApiProxy betsApiProxy, IConfiguration configuration)
+        public CustomerDomainService(ICustomersApiProxy customersApiProxy, IBetsApiProxy betsApiProxy, IConfiguration configuration)
         {
             _customersApiProxy = customersApiProxy;
             _betsApiProxy = betsApiProxy;

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace RaceDay.DomainServices.Interfaces
 {
-    public interface IRacesDomainService
+    public interface IRaceDomainService
     {
         Task<IEnumerable<RaceDetails>> GetRaceDetails();
     }

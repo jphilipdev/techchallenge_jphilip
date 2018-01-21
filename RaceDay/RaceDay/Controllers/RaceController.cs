@@ -5,19 +5,19 @@ using System.Threading.Tasks;
 namespace RaceDay.Controllers
 {
     [Route("api/[controller]")]
-    public class RacesController : Controller
+    public class RaceController : Controller
     {
-        private readonly IRacesDomainService _racesDomainService;
+        private readonly IRaceDomainService _raceDomainService;
 
-        public RacesController(IRacesDomainService racesDomainService)
+        public RaceController(IRaceDomainService raceDomainService)
         {
-            _racesDomainService = racesDomainService;
+            _raceDomainService = raceDomainService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var races = await _racesDomainService.GetRaceDetails();
+            var races = await _raceDomainService.GetRaceDetails();
             return Ok(races);
         }
     }

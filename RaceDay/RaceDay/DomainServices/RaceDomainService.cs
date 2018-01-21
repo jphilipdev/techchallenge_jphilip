@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace RaceDay.DomainServices
 {
-    public class RacesDomainService : IRacesDomainService
+    public class RaceDomainService : IRaceDomainService
     {
         private readonly IRacesApiProxy _racesApiProxy;
         private readonly IBetsApiProxy _betsApiProxy;
 
-        public RacesDomainService(IRacesApiProxy racesApiProxy, IBetsApiProxy betsApiProxy)
+        public RaceDomainService(IRacesApiProxy racesApiProxy, IBetsApiProxy betsApiProxy)
         {
             _racesApiProxy = racesApiProxy;
             _betsApiProxy = betsApiProxy;

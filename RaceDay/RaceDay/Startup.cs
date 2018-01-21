@@ -27,8 +27,8 @@ namespace RaceDay
         {
             services.AddMvc();
 
-            services.AddTransient<IRacesDomainService, RacesDomainService>();
-            services.AddTransient<ICustomersDomainService, CustomersDomainService>();
+            services.AddTransient<IRaceDomainService, RaceDomainService>();
+            services.AddTransient<ICustomerDomainService, CustomerDomainService>();
             //services.AddTransient<NLog.ILogger, Logger>();
             services.AddTransient<IApiAgent, ApiAgent>();
             services.AddTransient<IBetsApiProxy, BetsApiProxy>();

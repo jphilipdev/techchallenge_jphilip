@@ -7,9 +7,9 @@ namespace RaceDay.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IRacesDomainService _racesDomainService;
+        private readonly IRaceDomainService _racesDomainService;
 
-        public HomeController(IRacesDomainService racesDomainService)
+        public HomeController(IRaceDomainService racesDomainService)
         {
             _racesDomainService = racesDomainService;
         }

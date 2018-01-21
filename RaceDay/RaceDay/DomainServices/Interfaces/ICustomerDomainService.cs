@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace RaceDay.DomainServices.Interfaces
 {
-    public interface ICustomersDomainService
+    public interface ICustomerDomainService
     {
         Task<AllCustomers> GetCustomerDetails();
     }
