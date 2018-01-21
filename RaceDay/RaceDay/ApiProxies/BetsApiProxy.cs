@@ -17,9 +17,9 @@ namespace RaceDay.ApiProxies
             _apiUrl = configuration.GetValue<string>("EndPoints:Bets");
         }
 
-        public async Task<ICollection<Bet>> GetBets()
+        public async Task<IEnumerable<Bet>> GetBets()
         {
-            var bets = await _apiAgent.Get<ICollection<Bet>>(_apiUrl);
+            var bets = await _apiAgent.Get<IEnumerable<Bet>>(_apiUrl);
             return bets;
         }
     }

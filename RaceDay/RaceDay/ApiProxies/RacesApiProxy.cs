@@ -17,9 +17,9 @@ namespace RaceDay.ApiProxies
             _apiUrl = configuration.GetValue<string>("EndPoints:Races");
         }
 
-        public async Task<ICollection<Race>> GetRaces()
+        public async Task<IEnumerable<Race>> GetRaces()
         {
-            var races = await _apiAgent.Get<ICollection<Race>>(_apiUrl);
+            var races = await _apiAgent.Get<IEnumerable<Race>>(_apiUrl);
             return races;
         }
     }

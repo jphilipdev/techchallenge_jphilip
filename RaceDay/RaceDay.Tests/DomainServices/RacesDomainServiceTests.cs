@@ -94,7 +94,7 @@ namespace RaceDay.Tests
             _racesApiProxy.Verify();
             _betsApiProxy.Verify();
 
-            Assert.AreEqual(2, result.Count, "race details count");
+            Assert.AreEqual(2, result.Count(), "race details count");
 
             // assert race 1 details
             var race1 = VerifyRace(result, _raceId1, _raceStatus1, _stake1 + _stake2 + _stake3, 3);
@@ -111,14 +111,14 @@ namespace RaceDay.Tests
             VerifyHorse(race2, _horseId6, 0, 0);
         }
 
-        private RaceDetails VerifyRace(ICollection<RaceDetails> races, int raceId, string raceStatus, decimal totalPlaced, int horsesCount)
+        private RaceDetails VerifyRace(IEnumerable<RaceDetails> races, int raceId, string raceStatus, decimal totalPlaced, int horsesCount)
         {
             Assert.AreEqual(1, races.Where(p => p.Race.Id == raceId).Count(), $"count of races with ID '{raceId}'");
             var race = races.Single(p => p.Race.Id == raceId);
 
             Assert.AreEqual(raceStatus, race.Status, $"race '{raceId}' status");
             Assert.AreEqual(totalPlaced, race.TotalPlaced, $"race '{raceId}' total placed");
-            Assert.AreEqual(horsesCount, race.Horses.Count, $"race '{raceId}' horses count");
+            Assert.AreEqual(horsesCount, race.Horses.Count(), $"race '{raceId}' horses count");
 
             return race;
         }
@@ -131,7 +131,7 @@ namespace RaceDay.Tests
             Assert.AreEqual(totalPotentialPayout, horse.TotalPotentialPayout, $"horse '{horseId}' total potential payout");
         }
 
-        private ICollection<Race> CreateRaces()
+        private IEnumerable<Race> CreateRaces()
         {
             var horse1 = CreateHorse(_horseId1, _horseName1, _horseOdds1);
             var horse2 = CreateHorse(_horseId2, _horseName2, _horseOdds2);
@@ -146,7 +146,7 @@ namespace RaceDay.Tests
             return new[] { race1, race2 };
         }
 
-        private Race CreateRace(int id, string name, DateTime start, string status, ICollection<Horse> horses)
+        private Race CreateRace(int id, string name, DateTime start, string status, IEnumerable<Horse> horses)
         {
             return new Race(id, name, start, status, horses);
         }
@@ -156,7 +156,7 @@ namespace RaceDay.Tests
             return new Horse(id, name, odds);
         }
 
-        private ICollection<Bet> CreateBets()
+        private IEnumerable<Bet> CreateBets()
         {
             // horses 1 and 5 have 2 bets
             // horses 2 and 4 have 1 bet

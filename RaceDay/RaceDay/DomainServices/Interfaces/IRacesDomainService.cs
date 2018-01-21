@@ -6,6 +6,6 @@ namespace RaceDay.DomainServices.Interfaces
 {
     public interface IRacesDomainService
     {
-        Task<ICollection<RaceDetails>> GetRaceDetails();
+        Task<IEnumerable<RaceDetails>> GetRaceDetails();
     }
 }

@@ -5,19 +5,15 @@ namespace RaceDay.Models
 {
     public class AllCustomers
     {
-        public AllCustomers(ICollection<CustomerDetails> customerDetails, decimal atRiskCustomerTotalAmountPlacedValue)
+        public AllCustomers(IEnumerable<CustomerDetails> customerDetails, decimal atRiskCustomerTotalAmountPlacedValue)
         {
             CustomerDetails = customerDetails;
-
-            TotalBetsPlaced = customerDetails.Sum(p => p.BetsPlaced);
-
-            AtRiskCustomers = customerDetails.Where(p => p.BetsPlaced > atRiskCustomerTotalAmountPlacedValue).ToList();
+            TotalBetsPlaced = customerDetails.Sum(customer => customer.BetsPlaced);
+            AtRiskCustomers = customerDetails.Where(customer => customer.Bets.Any(bet => bet.Stake > atRiskCustomerTotalAmountPlacedValue)).ToList();
         }
 
-        public ICollection<CustomerDetails> CustomerDetails { get; }
-
+        public IEnumerable<CustomerDetails> CustomerDetails { get; }
         public decimal TotalBetsPlaced { get; }
-
-        public ICollection<CustomerDetails> AtRiskCustomers { get; }
+        public IEnumerable<CustomerDetails> AtRiskCustomers { get; }
     }
 }

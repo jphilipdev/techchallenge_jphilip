@@ -5,7 +5,7 @@ namespace RaceDay.Models
 {
     public class Race
     {
-        public Race(int id, string name, DateTime start, string status, ICollection<Horse> horses)
+        public Race(int id, string name, DateTime start, string status, IEnumerable<Horse> horses)
         {
             Id = id;
             Name = name;
@@ -18,6 +18,6 @@ namespace RaceDay.Models
         public string Name { get; set; }
         public DateTime Start { get; set; }
         public string Status { get; set; }
-        public ICollection<Horse> Horses { get; set; }
+        public IEnumerable<Horse> Horses { get; set; }
     }
 }

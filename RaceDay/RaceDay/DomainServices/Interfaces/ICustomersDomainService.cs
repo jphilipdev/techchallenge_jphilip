@@ -1,10 +1,10 @@
 ﻿using RaceDay.Models;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace RaceDay.DomainServices.Interfaces
 {
     public interface ICustomersDomainService
     {
-        ICollection<CustomerDetails> GetCustomerDetails();
+        Task<AllCustomers> GetCustomerDetails();
     }
 }

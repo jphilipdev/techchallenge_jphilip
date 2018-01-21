@@ -6,6 +6,6 @@ namespace RaceDay.ApiProxies.Interfaces
 {
     public interface IBetsApiProxy
     {
-        Task<ICollection<Bet>> GetBets();
+        Task<IEnumerable<Bet>> GetBets();
     }
 }
