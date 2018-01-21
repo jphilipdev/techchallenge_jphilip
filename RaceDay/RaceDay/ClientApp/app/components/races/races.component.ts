@@ -9,7 +9,7 @@ export class RacesComponent {
     public races: RaceDetails[];
 
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {
-        http.get('http://localhost:7344/api/race').subscribe(result => {
+        http.get(baseUrl + 'api/race').subscribe(result => {
             this.races = result.json() as RaceDetails[];
         }, error => console.error(error));
     }
